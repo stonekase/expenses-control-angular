@@ -9,8 +9,8 @@ steps:
     args: ['run', 'build']
   - name: 'gcr.io/${_FIREBASE_PROJECT_ID}/firebase'
     args: ['use', '${_FIREBASE_PROJECT_ID}', '--token', '${_FIREBASE_TOKEN}']
-  - name: 'gcr.io/${_FIREBASE_PROJECT_ID}/firebase'
-    args: ['target:apply', 'hosting', 'expenses-control-app-aacf3', 'expenses-control-app-aacf3', '--token', '${_FIREBASE_TOKEN}']
+  #- name: 'gcr.io/${_FIREBASE_PROJECT_ID}/firebase'
+  #  args: ['target:apply', 'hosting', 'expenses-control-app-aacf3', 'expenses-control-app-aacf3', '--token', '${_FIREBASE_TOKEN}']
   #- name: 'gcr.io/${_FIREBASE_PROJECT_ID}/firebase'
    # args: ['deploy', '--token', '${_FIREBASE_TOKEN}', '--only', 'hosting:expenses-control-app-aacf3']
 
