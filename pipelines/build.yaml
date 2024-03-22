@@ -1,7 +1,6 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/${_FIREBASE_PROJECT_ID}/firebase', './dockerfiles/firebase']
-  - images: ['gcr.io/${_FIREBASE_PROJECT_ID}/firebase']
     #args: ['build', '-t', 'us-central1-docker.pkg.dev/${_FIREBASE_PROJECT_ID}/firebase', './dockerfiles/firebase']
   - name: 'node:20.10.0'
     entrypoint: 'npm'
@@ -15,6 +14,8 @@ steps:
     args: ['target:apply', 'hosting', 'expenses-control-app-aacf3', 'expenses-control-app-aacf3', '--token', '${_FIREBASE_TOKEN}']
   - name: 'gcr.io/${_FIREBASE_PROJECT_ID}/firebase'
     args: ['deploy', '--token', '${_FIREBASE_TOKEN}', '--only', 'hosting:expenses-control-app-aacf3']
+images: ['gcr.io/${_FIREBASE_PROJECT_ID}/firebase']
+
 timeout: 1200s
 
 #us-central1-docker.pkg.dev/expenses-control-app-aacf3/firebase
