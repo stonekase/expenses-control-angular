@@ -14,6 +14,9 @@ steps:
     args: ['target:apply', 'hosting', 'expenses-control-app-aacf3', 'expenses-control-app-aacf3', '--token', '${_FIREBASE_TOKEN}']
   - name: 'gcr.io/${_FIREBASE_PROJECT_ID}/firebase'
     args: ['deploy', '--token', '${_FIREBASE_TOKEN}', '--only', 'hosting:expenses-control-app-aacf3']
+
+options:
+logging: CLOUD_LOGGING_ONLY
 #images: ['gcr.io/${_FIREBASE_PROJECT_ID}/firebase']
 
 timeout: 1200s
