@@ -9,11 +9,12 @@ steps:
     args: ['run', 'build']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/${_FIREBASE_PROJECT_ID}/firebase']
-images: ['gcr.io/${_FIREBASE_PROJECT_ID}/firebase']
-steps:
-  # Other build steps...
   - name: 'gcr.io/${_FIREBASE_PROJECT_ID}/firebase'
     args: ['deploy', '--project', '${_FIREBASE_PROJECT_ID}']
+images: ['gcr.io/${_FIREBASE_PROJECT_ID}/firebase']
+
+  # Other build steps...
+  
   #- name: 'gcr.io/${_FIREBASE_PROJECT_ID}/firebase'
   #  args: ['use', '${_FIREBASE_PROJECT_ID}', '--token', '${_FIREBASE_TOKEN}']
   #- name: 'gcr.io/${_FIREBASE_PROJECT_ID}/firebase'
