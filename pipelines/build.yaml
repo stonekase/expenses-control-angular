@@ -10,7 +10,7 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/${_FIREBASE_PROJECT_ID}/firebase']
   - name: 'gcr.io/${_FIREBASE_PROJECT_ID}/firebase'
-    args: ['deploy', '--project', '${_FIREBASE_PROJECT_ID}']
+    args: ['deploy', '--project=${_FIREBASE_PROJECT_ID}', '${_FIREBASE_PROJECT_ID}', '--only=hosting']
 images: ['gcr.io/${_FIREBASE_PROJECT_ID}/firebase']
 
   # Other build steps...
