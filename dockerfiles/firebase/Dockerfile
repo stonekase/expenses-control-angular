@@ -2,5 +2,5 @@ FROM node:20.10.0
 
 RUN npm install -g firebase-tools
 
-ENTRYPOINT ["usr/local/bin/firebase"]
+ENTRYPOINT ["C:\Users\DELL\AppData\Roaming\npm"]
 
