@@ -10,7 +10,7 @@ steps:
     entrypoint: 'npm'
     args: ['run', 'build']
   - name: gcr.io/project-id/firebase
-    args: ['deploy', '--project=${_FIREBASE_PROJECT_ID}', '--only=hosting:expenses-control-app-aacf3']
+    args: ['deploy', '--project=${_FIREBASE_PROJECT_ID}', '--only=hosting:${_FIREBASE_PROJECT_ID}']
   #- name: 'gcr.io/${_FIREBASE_PROJECT_ID}/firebase'
   #  args: ['use', '${_FIREBASE_PROJECT_ID}', '--token', '${_FIREBASE_TOKEN}']
   #- name: 'gcr.io/${_FIREBASE_PROJECT_ID}/firebase'
